@@ -2,6 +2,7 @@
 #include <string>
 #include <utility>
 
+// The commented out section is valid for lambda composition, but only for single param lambda functions
 // template <typename F>
 // auto compose(F&& f) {
 //   return [=](auto x) {
@@ -22,10 +23,6 @@
 //   [] (int const n) {return n * n; },
 //   [] (int const n) {return n + n; },
 //   [] (int const n) {return std::abs(n); }); 
-
-// int main(){
-//   std::cout<< n(-3);// n = "36"
-// };
 
 // auto v = compose(
 //   [](int const n) {return std::to_string(n); },
