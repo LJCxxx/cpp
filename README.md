@@ -5,7 +5,7 @@ Just some basic templates.\
 <br/>
 **lambdas.cpp** uses variadic function template for lambda composition(for single and multi arguments), a functional programming (FP) concept where functions are composed to create higher-order functions. Some of the functions have the consteval/constexpr specifier. These specifiers indicate to the compiler to evaluate the functions at compile time, and the function call is replaced with the return value.\
 <br/>
-**alloc.cpp** is a simple implementation of memory preallocation, a data oriented design technique aimed at reducing/eliminating runtime memory allocation and keeping data compact.
+**alloc.cpp** is a wrapper around malloc, serving as a memory management abstraction rather than a full-fledged custom allocator. It provides a basic implementation of memory preallocation and sandboxing—a data-oriented design technique aimed at reducing or eliminating runtime memory allocation and keeping data compact.
 
 <br/><br/>sources:\
 Marius Bancila, Modern C++ Programming Cookbook. Packt Publishing Ltd, 2024.\
