@@ -37,8 +37,8 @@ auto compose(F&& f) {
 
 auto find_winners(const int f, const int m, const int n) {
 
-  auto factor = [f] (auto e) { return e % f == 0 ? e : 0; };
-  auto must_have = [m] (auto e) { return e == 0 ? false : 
+  auto factor = [f](auto e) { return e % f == 0 ? e : 0; };
+  auto must_have = [m](auto e) { return e == 0 ? false : 
     std::to_string(e).find(std::to_string(m)) != std::string::npos;
   };
   auto predicate = compose(must_have, factor);
