@@ -11,14 +11,13 @@ void cholesky_decompositon(const T* A, T* L, const size_t size) {
   T tmp = 0;
   for(int i = 0; i < size; i++) {
     for(int j = 0; j <= i; j++) {
+      tmp = A[size * i + j];
       if(i == j) {
-        tmp = A[size * i + j];
         for(int k = 0; k < j; k++) {
           tmp -= L[size * i + k] * L[size * i + k];
         }
         L[size * i + j] = std::sqrt(tmp);
       } else {
-        tmp = A[size * i + j];
         for(int k = 0; k < j; k++) {
           tmp -= L[size * i + k] * L[size * j + k];
         }
