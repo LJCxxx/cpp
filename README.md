@@ -1,5 +1,5 @@
 # cpp
-Some basic templates posted on GitHub for personal reference.".\
+Some basic templates posted on GitHub for personal reference.\
 <br/>
 **List.h** is a doubly linked list. demonstrates class composition and operator overloading; however, as a node-based structure, it typically results in poor memory access patterns and is generally less recommended except for use in trees or graphs. Other linear data structures with contiguous memory alignment, such as traditional C arrays, std::vector, or even std::valarray, are generally preferred for better memory access patterns.\
 <br/>
