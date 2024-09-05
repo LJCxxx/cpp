@@ -8,20 +8,21 @@ concept Numerical = std::is_integral_v<T> || std::is_floating_point_v<T>;
 
 template <Numerical T>
 void cholesky_decompositon(const T* A, T* L, const size_t size) {
+  T tmp = 0;
   for(int i = 0; i < size; i++) {
     for(int j = 0; j <= i; j++) {
       if(i == j) {
-        auto tmp = A[size * i + j];
+        tmp = A[size * i + j];
         for(int k = 0; k < j; k++) {
           tmp -= L[size * i + k] * L[size * i + k];
         }
         L[size * i + j] = std::sqrt(tmp);
       } else {
-        auto tmp = A[size * i + j];
+        tmp = A[size * i + j];
         for(int k = 0; k < j; k++) {
-          tmp -= L[size * i + k] * L[size * (i - 1) + k];
+          tmp -= L[size * i + k] * L[size * j + k];
         }
-        L[size * i + j] = tmp / L[size * (j) + j];
+        L[size * i + j] = tmp / L[size * j + j];
       }
     }
   }
