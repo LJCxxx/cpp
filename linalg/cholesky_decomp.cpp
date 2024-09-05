@@ -54,32 +54,32 @@ void print(auto* A, size_t rowA, size_t colA) {
 } 
 
 int main() {
-  unsigned const int rowA = 3;
-  float A[rowA * rowA] {
+  unsigned const int sizeA = 3;
+  float A[sizeA * sizeA] {
     4, 12, -16,
     12, 37, -43,
     -16, -43, 98
   };
 
-  float L[rowA * rowA] {0.0};
-  float LT[rowA * rowA] {0.0};
-  float LLT[rowA * rowA] {0.0};
+  float L[sizeA * sizeA] {0.0};
+  float LT[sizeA * sizeA] {0.0};
+  float LLT[sizeA * sizeA] {0.0};
 
-  cholesky_decompositon(A, L, rowA);
-  transpose(L, LT, 3, 3);
-  gemm(L, LT, LLT, 3, 3, 3);
+  cholesky_decompositon(A, L, sizeA);
+  transpose(L, LT, sizeA, sizeA);
+  gemm(L, LT, LLT, sizeA, sizeA, sizeA);
   
   std::cout<< "matrix A:\n";
-  print(A, rowA, rowA);
+  print(A, sizeA, sizeA);
 
   std::cout<< "\nmatrix L:\n";
-  print(L, rowA, rowA);
+  print(L, sizeA, sizeA);
 
   std::cout<< "\nmatrix LT:\n";
-  print(LT, rowA, rowA);
+  print(LT, sizeA, sizeA);
 
   std::cout<< "\nmatrix LLT:\n";
-  print(LLT, rowA, rowA);
+  print(LLT, sizeA, sizeA);
 }
 // prints
 // 
