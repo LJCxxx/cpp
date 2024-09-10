@@ -16,6 +16,13 @@
 //
 // This version emphasizes modularity by highlighting how each part of the solution
 // can be composed and reused.
+//
+// Edit:
+// Previous solutions used variadic templates or logical AND (factor && must_have).
+// Both approaches either required extra logic in lambdas or evaluated all conditions.
+// The current approach conditionally evaluates must_have, keeping lambdas simple 
+// and preserving single responsibility. This highlights that sometimes, simple 
+// conditional checks are more effective even in expressive, functional code.
 
 #include <string>
 #include <ranges>
